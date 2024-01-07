@@ -9,6 +9,12 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 0;
+    margin: 0;
+    /* 'height' and 'overflow' declarations prevent the page from scrolling -
+    just like Twitter's page */
+    height: 100%;
+    overflow: hidden
 }
 
 .main-body {
@@ -17,6 +23,7 @@ body {
     justify-content: center;
     align-items: center;
     color: white;
+    margin-bottom: -20px;
 }
 
 .main-title {
