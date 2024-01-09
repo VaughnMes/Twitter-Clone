@@ -4,8 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Research lines 8 and 9 -->
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <meta name="Cross-Origin-Opener-Policy" content="same-origin-allow-popups">
     <link rel="stylesheet" href="./styles.css">
     <script src="https://kit.fontawesome.com/36f80cc1b5.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./script.js" defer></script>
     <title>X (Formerly known as Twitter)</title>
 </head>
 
@@ -21,11 +25,15 @@
                 Join today.
             </div>
             <div class="access">
+                <!-- Google OAuth Sign-up button -->
                 <div class="google-oauth">
-                    <i class="google-logo">placeholder for google logo</i>
-                    <button>
-                        Sign up with Google
-                    </button>
+                    <div id="g_id_onload" data-client_id="363130405161-pancobeqr1kulmc925im52tf0pnppkp6.apps.googleusercontent.com"
+                        data-context="signup" data-ux_mode="popup" data-callback="handleCredentialResponse" data-auto_prompt="false">
+                    </div>
+                    
+                    <div class="g_id_signin" data-type="standard" data-shape="pill" data-theme="outline" data-text="signup_with"
+                        data-size="large" data-logo_alignment="left">
+                    </div>
                 </div>
                 <div class="apple-oauth">
                     <i class="apple-logo">placeholder for apple logo</i>
@@ -92,8 +100,14 @@
             <li class="copyright">Copyright</li>
         </ul>
     </div>
-
-    <script src="./script.js"></script>
+    <!-- Research! -->
+    <!-- This works when hosted on a server (i.e. using Python) -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script>
+        function handleCredentialResponse(response) {
+            decodeJwtResponse(response.credential);
+        }
+    </script>
 </body>
 
 </html>
