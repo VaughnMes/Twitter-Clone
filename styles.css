@@ -14,7 +14,7 @@ body {
     /* 'height' and 'overflow' declarations prevent the page from scrolling -
     just like Twitter's page */
     height: 100%;
-    overflow: hidden
+    overflow: hidden;
 }
 
 .main-body {
@@ -38,10 +38,6 @@ body {
     color: lightgray;
     font-weight: bolder;
     margin-bottom: 50px;
-}
-
-.fa-brands {
-    padding: 200px;
 }
 
 .footer-links {
@@ -100,10 +96,28 @@ a:hover {
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    width: 400px;
+    width: 300px;
 }
 
 .fa-brands.fa-x-twitter {
-    color: #ffffff;
-    font-size: 350px
+    font-size: 350px;
+    padding: 200px;
+    color: lightgray;
 }
+
+.terms {
+    color: rgb(113, 118, 123);
+    font-size: 12px;
+    margin-right: 500px;
+}
+
+a,
+.copyright
+{
+    color: rgb(113, 118, 123)
+}
+
+span a {
+    color: rgb(29, 155, 240);
+}
+
