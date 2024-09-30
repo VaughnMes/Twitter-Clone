@@ -40,6 +40,12 @@ body {
     margin-bottom: 50px;
 }
 
+.right-hand-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
 .footer-links {
     color: white;
 }
@@ -119,5 +125,42 @@ a,
 
 span a {
     color: rgb(29, 155, 240);
+}
+
+
+@media (max-width: 768px) {
+    .main-body {
+        flex-direction: column;
+        padding: 20px 50px;
+    }
+    
+    /* Aligns the headers and sign in containers */
+    .right-hand-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .create-account, .sign-in {
+        padding: 10px 50px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .access {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .google-oauth {
+        width: 100%;
+        text-align: center;
+    }
+        
+    .footer-links ul {
+            flex-direction: column;
+            align-items: center;
+    }
 }
 
