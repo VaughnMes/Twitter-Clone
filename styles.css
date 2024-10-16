@@ -1,6 +1,18 @@
+:root {
+    --primary-color: lightgray;
+    --secondary-color: rgb(29, 155, 240);
+    --font-stack: system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Ubuntu,
+        "Helvetica Neue",
+        sans-serif;
+}
+
 * {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont,
-        "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+    font-family: var(--font-stack);
 }
 
 body {
@@ -23,21 +35,26 @@ body {
     justify-content: center;
     align-items: center;
     color: white;
-    margin-bottom: -20px;
+    margin-bottom: -1.25rem;
+    /* Converted -20px to -1.25rem (-20px / 16px) */
 }
 
 .main-title {
-    font-size: 75px;
+    font-size: 4.6875rem;
+    /* Converted 75px to 4.6875rem (75px / 16px) */
     font-weight: bolder;
-    margin-bottom: 70px;
-    color: lightgray;
+    margin-bottom: 0.9333em;
+    /* Converted 70px to 0.9333em (70px / 75px) */
+    color: var(--primary-color);
 }
 
 .subtitle {
-    font-size: 35px;
-    color: lightgray;
+    font-size: 2.1875rem;
+    /* Converted 35px to 2.1875rem (35px / 16px) */
+    color: var(--primary-color);
     font-weight: bolder;
-    margin-bottom: 50px;
+    margin-bottom: 1.4286em;
+    /* Converted 50px to 1.4286em (50px / 35px) */
 }
 
 .right-hand-section {
@@ -53,7 +70,8 @@ body {
 ul {
     display: flex;
     list-style: none;
-    gap: 5px;
+    /* gap: 0.3125em; */
+    /* Converted 5px to 0.3125em (5px / 16px) */
 }
 
 a {
@@ -66,30 +84,34 @@ a:hover {
 }
 
 .create-account {
-    background-color: rgb(29, 155, 240);
+    background-color: var(--secondary-color);
     color: white;
-    border-radius: 14px;
+    border-radius: 0.875em;
+    /* Converted 14px to 0.875em (14px / 16px) */
     border: none;
-    padding: 10px 80px;
+    padding: 0.625em 5em;
+    /* Converted 10px to 0.625em, 80px to 5em (padding scales with font size) */
     font-weight: bold;
     transition-duration: 10ms;
 }
 
 .create-account:hover {
     cursor: pointer;
-    background-color: rgb(27, 145, 223);
+    background-color: var(--secondary-color);
 }
 
-
 .sign-in {
-    border-radius: 14px;
+    border-radius: 0.875em;
+    /* Converted 14px to 0.875em (14px / 16px) */
     border-style: solid;
-    border-width: 1px;
+    border-width: 0.0625em;
+    /* Converted 1px to 0.0625em (1px / 16px) */
     border-color: rgb(83, 100, 113);
-    padding: 10px 110px;
+    padding: 0.625em 6.875em;
+    /* Converted 10px to 0.625em, 110px to 6.875em */
     font-weight: bold;
     background-color: black;
-    color: rgb(29, 155, 240);
+    color: var(--secondary-color);
     transition-duration: 10ms;
 }
 
@@ -102,65 +124,50 @@ a:hover {
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    width: 300px;
+    width: 100%;
+    /* Changed 300px to 100% to fill parent width */
+    max-width: 18.75rem;
+    /* Added max-width to cap at 300px (300px / 16px) */
 }
 
 .fa-brands.fa-x-twitter {
-    font-size: 350px;
-    padding: 200px;
-    color: lightgray;
+    font-size: 18.229vw;
+    /* Converted 350px to 18.229vw (350px / 1920px * 100vw) */
+    padding: 10.4167vw;
+    /* Converted 200px to 10.4167vw (200px / 1920px * 100vw) */
+    color: var(--primary-color);
+
+    transition: transform .9s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0.2;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.fa-brands.fa-x-twitter:hover {
+    transform: rotate(-180deg) scale(0.8);
+    animation: fadeIn 2s ease-in-out;
 }
 
 .terms {
     color: rgb(113, 118, 123);
-    font-size: 12px;
-    margin-right: 500px;
+    font-size: 0.75rem;
+    /* Converted 12px to 0.75rem (12px / 16px) */
+    margin-right: 26.0417vw;
+    /* Converted 500px to 26.0417vw (500px / 1920px * 100vw) */
 }
 
 a,
-.copyright
-{
-    color: rgb(113, 118, 123)
+.copyright {
+    color: rgb(113, 118, 123);
 }
 
 span a {
     color: rgb(29, 155, 240);
 }
-
-
-@media (max-width: 768px) {
-    .main-body {
-        flex-direction: column;
-        padding: 20px 50px;
-    }
-    
-    /* Aligns the headers and sign in containers */
-    .right-hand-section {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .create-account, .sign-in {
-        padding: 10px 50px;
-        width: 100%;
-        text-align: center;
-    }
-
-    .access {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .google-oauth {
-        width: 100%;
-        text-align: center;
-    }
-        
-    .footer-links ul {
-            flex-direction: column;
-            align-items: center;
-    }
-}
-
